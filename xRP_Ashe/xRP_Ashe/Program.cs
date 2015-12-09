@@ -242,7 +242,7 @@ namespace xRP_Ashe
                 {
                     if (Me.GetBuffCount("asheqcastready") >= 4 && waitP)
                         {
-                            spells[SpellSlot.q].Cast();
+                          Q.Cast();
                         }
                     
                 }
