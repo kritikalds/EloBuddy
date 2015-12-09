@@ -85,7 +85,7 @@ namespace xRP_Ashe
             FarmMenu.Add("countP", new CheckBox("Wait 4 Passive Count to Cast Q in laneClear"));
             FarmMenu.AddSeparator();
             FarmMenu.Add("farmW", new CheckBox("Use W to farm"));
-            FarmMenu.Add("countM", new Slider("Min Minions to cast W", 5));
+            FarmMenu.Add("countM", new Slider("Min Minions to cast W", 4));
 
             MiscMenu = AsheMenu.AddSubMenu("Misc Settings");
             MiscMenu.AddGroupLabel("Misc Settings");
@@ -321,7 +321,7 @@ namespace xRP_Ashe
             {
                 var targetq = TargetSelector.GetTarget(Me.GetAutoAttackRange(), DamageType.Physical);
 
-                if (countP && Me.GetBuffCount("asheqcastready") >= 4 && targetq.IsValidTarget(Me.GetAutoAttackRange()-50))
+                if (countP && Me.GetBuffCount("asheqcastready") >= 4 && targetq.IsValidTarget(Me.GetAutoAttackRange()-40))
                 {
                     Q.Cast();
                 }
