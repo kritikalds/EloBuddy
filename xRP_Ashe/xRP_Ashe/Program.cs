@@ -44,7 +44,7 @@ namespace xRP_Ashe
             ComboMenu.AddGroupLabel("Combo Settings");
             ComboMenu.AddSeparator();
             ComboMenu.Add("useQ", new CheckBox("Use Q in Combo"));
-            ComboMenu.Add("countP", new CheckBox("Wait 5 Passive Count to Cast Q"));
+            ComboMenu.Add("countP", new CheckBox("Wait 4 Passive Count to Cast Q"));
             ComboMenu.AddSeparator();
             ComboMenu.Add("useW", new CheckBox("Use W in Combo"));
             ComboMenu.AddSeparator();
@@ -240,7 +240,7 @@ namespace xRP_Ashe
 
                 if (targetq.IsValidTarget(600))
                 {
-                    if (Me.GetBuffCount("asheqcastready") >= 5 && waitP)
+                    if (Me.GetBuffCount("asheqcastready") >= 4 && waitP)
                         {
                             Q.Cast();
                         }
@@ -292,7 +292,7 @@ namespace xRP_Ashe
             if (Q.IsReady() && farmQ)
             {
 
-                if (waitP && Me.GetBuffCount("asheqcastready") >= 5)
+                if (waitP && Me.GetBuffCount("asheqcastready") >= 4)
                 {
                         Q.Cast();
                     
@@ -321,7 +321,7 @@ namespace xRP_Ashe
             {
                 var targetq = TargetSelector.GetTarget(Me.GetAutoAttackRange(), DamageType.Physical);
 
-                if (countP && Me.GetBuffCount("asheqcastready") >= 5 && targetq.IsValidTarget(Me.GetAutoAttackRange()-50))
+                if (countP && Me.GetBuffCount("asheqcastready") >= 4 && targetq.IsValidTarget(Me.GetAutoAttackRange()-50))
                 {
                     Q.Cast();
                 }
