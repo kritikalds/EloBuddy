@@ -44,7 +44,7 @@ namespace xRP_Ashe
             ComboMenu.AddGroupLabel("Combo Settings");
             ComboMenu.AddSeparator();
             ComboMenu.Add("useQ", new CheckBox("Use Q in Combo"));
-            ComboMenu.Add("countP", new CheckBox("Wait 5 Passive Count to Cast Q"));
+            ComboMenu.Add("countP", new CheckBox("Wait 4 Passive Count to Cast Q"));
             ComboMenu.AddSeparator();
             ComboMenu.Add("useW", new CheckBox("Use W in Combo"));
             ComboMenu.AddSeparator();
@@ -74,7 +74,7 @@ namespace xRP_Ashe
             HarassMenu.AddGroupLabel("Harass Settings");
             HarassMenu.AddSeparator();
             HarassMenu.Add("useQ", new CheckBox("Use Q in harass"));
-            HarassMenu.Add("countP", new CheckBox("Wait 5 passive count to cast Q in harass"));
+            HarassMenu.Add("countP", new CheckBox("Wait 4 passive count to cast Q in harass"));
             HarassMenu.AddSeparator();
             HarassMenu.Add("useW", new CheckBox("Use W in harass"));
 
@@ -321,7 +321,7 @@ namespace xRP_Ashe
             {
                 var targetq = TargetSelector.GetTarget(Me.GetAutoAttackRange(), DamageType.Physical);
 
-                if (countP && Me.GetBuffCount("asheqcastready") >= 5 && targetq.IsValidTarget(Me.GetAutoAttackRange()-50))
+                if (countP && Me.GetBuffCount("asheqcastready") >= 4 && targetq.IsValidTarget(Me.GetAutoAttackRange()-50))
                 {
                     Q.Cast();
                 }
