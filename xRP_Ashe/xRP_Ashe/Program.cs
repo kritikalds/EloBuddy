@@ -82,7 +82,7 @@ namespace xRP_Ashe
             FarmMenu.AddGroupLabel("Farm Settings");
             FarmMenu.AddSeparator();
             FarmMenu.Add("farmQ", new CheckBox("Use Q to farm"));
-            FarmMenu.Add("countP", new CheckBox("Wait 5 Passive Count to Cast Q in laneClear"));
+            FarmMenu.Add("countP", new CheckBox("Wait 4 Passive Count to Cast Q in laneClear"));
             FarmMenu.AddSeparator();
             FarmMenu.Add("farmW", new CheckBox("Use W to farm"));
             FarmMenu.Add("countM", new Slider("Min Minions to cast W", 5));
@@ -240,7 +240,7 @@ namespace xRP_Ashe
 
                 if (targetq.IsValidTarget(600))
                 {
-                    if (Me.GetBuffCount("asheqcastready") >= 5 && waitP)
+                    if (Me.GetBuffCount("asheqcastready") >= 4 && waitP)
                         {
                             Q.Cast();
                         }
@@ -292,7 +292,7 @@ namespace xRP_Ashe
             if (Q.IsReady() && farmQ)
             {
 
-                if (waitP && Me.GetBuffCount("asheqcastready") >= 5)
+                if (waitP && Me.GetBuffCount("asheqcastready") >= 4)
                 {
                         Q.Cast();
                     
